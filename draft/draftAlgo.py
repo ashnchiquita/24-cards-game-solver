@@ -45,14 +45,14 @@ def printList(list):
         print(elmt)
 
 # Main Algorithm
-card = [6,6,6,6]
+card = [1,2,3,4]
 print('Cards:', card,'\n')
 cardStr = createStrArr(card)
 oplist = ['+','-','*','/']
-cp1 = [0.0 for i in range(3)]
+cpNum1 = [0.0 for i in range(3)]
 cp2 = [0.0 for i in range(2)]
 cp3 = [0.0 for i in range(1)]
-e1 = ['**' for i in range(3)]
+cpStr1 = ['**' for i in range(3)]
 e2 = ['**' for i in range(2)]
 e3 = ['**' for i in range(1)]
 
@@ -65,14 +65,14 @@ for i in range(4):
             for op in range(4):
                 res, check = opSwitch(card[i],card[j],op)
                 if (check):
-                    copyExc(card, cardStr, cp1, e1,i,j,op,False)
+                    copyExc(card, cardStr, cpNum1, cpStr1,i,j,op,False)
                     for k in range(3):
                         for l in range(3):
                             if (k != l):
                                 for op in range(4):
-                                    res, check = opSwitch(cp1[k],cp1[l],op)
+                                    res, check = opSwitch(cpNum1[k],cpNum1[l],op)
                                     if (check):
-                                        copyExc(cp1, e1, cp2, e2,k,l,op,False)
+                                        copyExc(cpNum1, cpStr1, cp2, e2,k,l,op,False)
                                         for m in range(2):
                                             for n in range(2):
                                                 if (m != n):

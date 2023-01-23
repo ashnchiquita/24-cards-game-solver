@@ -3,14 +3,14 @@ import time
 # Functions
 def copyExc(level, precNum, precStr, newNum, newStr, i, j, op, last):
     ctr = 0
-    if (level > 2):
-        for k in range(level - 1):
+    if (len(precNum) > 2):
+        for k in range(len(precNum)):
             if (k != i and k != j):
                 newNum[ctr] = precNum[k]
                 newStr[ctr] = precStr[k]
                 ctr += 1
-    newNum[ctr], check = opSwitch(precNum[i],precNum[j],op)
-    newStr[ctr] = createExp(precStr[i],precStr[j],op,last)
+    newNum[-1], check = opSwitch(precNum[i],precNum[j],op)
+    newStr[-1] = createExp(precStr[i],precStr[j],op,last)
     
 def opSwitch(a,b,op):
     status = True
@@ -54,20 +54,20 @@ def recPerm(level, setStr, precNum, precStr, newNum, newStr):
                             last = False
                             if (level == 2):
                                 last = True
-                            #     newerNum = a
-                            #     newerStr = a
-                            # elif (level == 4):
-                            #     newerNum = cp2
-                            #     newerStr = e2
-                            # elif (level == 3):
-                            #     newerNum = cp3
-                            #     newerStr = e3
+                                newerNum = a
+                                newerStr = a
+                            elif (level == 4):
+                                newerNum = cp2
+                                newerStr = e2
+                            elif (level == 3):
+                                newerNum = cp3
+                                newerStr = e3
                             copyExc(level, precNum, precStr, newNum, newStr, i, j, op, last)
                             # print("Level:", level)
                             # print('Prec:', precNum[:level],'\t', precStr[:level])
                             # print('New:', newNum[:level-1],'\t', newStr[:level-1])
-                            recPerm(level - 1, setStr, newNum, newStr, precNum, precStr)
-                            # recPerm(level - 1, setStr, newNum, newStr, newerNum, newerStr)
+                            # recPerm(level - 1, setStr, newNum, newStr, precNum, precStr)
+                            recPerm(level - 1, setStr, newNum, newStr, newerNum, newerStr)
 
 def printList(list):
     for elmt in list:
@@ -81,10 +81,10 @@ cardStr = createStrArr(card)
 oplist = ['+','-','*','/']
 
 a = []
-cp1 = [0.0 for i in range(4)]
+cp1 = [0.0 for i in range(3)]
 cp2 = [0.0 for i in range(2)]
 cp3 = [0.0 for i in range(1)]
-e1 = ['X' for i in range(4)]
+e1 = ['X' for i in range(3)]
 e2 = ['X' for i in range(2)]
 e3 = ['X' for i in range(1)]
 
