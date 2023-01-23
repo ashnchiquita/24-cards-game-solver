@@ -6,8 +6,8 @@ public class InputHandler {
     private static final String[] validCards = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     private static Scanner in = new Scanner(System.in);
 
-    /* CHOOSE INPUT METHOD */
     public static int rangedInput(int a, int b, String question) {
+        /* Memvalidasi masukan pilihan antara a dan b (inklusif) */
         String[] prevAns;
         int ans;
 
@@ -35,16 +35,17 @@ public class InputHandler {
     }
 
     public static int inputMethod() {
+        /* Memilih cara memasukkan deck, random atau custom */
         return rangedInput(1, 2, "\nChoose input method:\n1. Custom Deck\n2. Random Deck");
     }
 
     public static int contConfirm() {
+        /* Memilih melanjutkan program atau tidak */
         return rangedInput(1, 2, "\nContinue?\n1. Yes\n2. No");
     }
 
-    /* READ CUSTOM DECK */
-    /* Array member validation */
     private static boolean validArr(String[] arrStr) {
+        /* Memvalidasi apakah array merupakan sebuah deck kartu yang valid */
         boolean valid = true;
 
         if (arrStr.length == 4) {
@@ -60,8 +61,9 @@ public class InputHandler {
 
         return valid;
     }
-    /* Function */
+    
     public static void readInput(String[] deck) {
+        /* Membaca masukan deck custom */
         String[] arrOfStr = in.nextLine().split(" ");
 
         while (!validArr(arrOfStr)) {
@@ -74,17 +76,16 @@ public class InputHandler {
         }
     }
 
-    /* CREATE RANDOM DECK */
     public static void randInput(String[] deck) {
+        /* Membuat deck random */
         Random rand = new Random();
         for (int i = 0; i < 4; i++) {
             deck[i] = validCards[rand.nextInt(13)];
         }
     }
 
-    /* CONVERT DECK (ARRAY OF STRINGS) TO CARDNUM (ARRAY OF DOUBLES) */
-    /* Convert a string to a double */
     private static double convertStr(String card) {
+        /* Mengubah kartu menjadi nilai angka */
         if (card.equals("A")) {
             return 1;
         } else if (card.equals("J")) {
@@ -97,8 +98,9 @@ public class InputHandler {
             return Double.parseDouble(card);
         }
     }
-    /* Function */
+    
     public static void convertDeck(String[] deck, double[] cardNum) {
+        /* Mengubah setiap kartu dalam deck menjadi nilai angkanya */
         for (int i = 0; i < 4; i++) {
             cardNum[i] = convertStr(deck[i]);
         }

@@ -1,6 +1,7 @@
 import java.util.HashSet;
 
 public class App {
+    /* PROGRAM UTAMA */
     public static void main(String[] args) throws Exception {
         int cmd;
 
@@ -10,6 +11,7 @@ public class App {
         } while (cmd != 2);
     }
 
+    /* 1X SOLVE DECK */
     private static void mainProg() {
         String[] deck = new String[4];
         double[] cards = new double[4];

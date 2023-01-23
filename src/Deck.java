@@ -10,6 +10,8 @@ public class Deck {
     private static String[] cpStr3 = {"X"};
 
     private static double opSwitch(double a, double b, int op) {
+        /* Mengembalikan nilai 'a op b', op menunjukkan indeks pada array opList 
+         * Prekondisi: tidak ada pembagian dengan nol */
         switch (op) {
             case 0:
                 return a + b;
@@ -23,6 +25,8 @@ public class Deck {
     }
 
     private static String createExp(String exp1, String exp2, int op, boolean last) {
+        /* Mengembalikan string "a op b" atau "(a op b)", op menunjukkan indeks pada array opList 
+         * Prekondisi: tidak ada pembagian dengan nol */
         String exp = exp1 + " " + opList[op] + " " + exp2;
         if (!last) {
             exp = "(" + exp + ")";
@@ -31,6 +35,7 @@ public class Deck {
     }
 
     public static String stringDeck(String[] deck) {
+        /* Mengubah array deck menjadi satu string, tiap kartu dipisahkan oleh spasi */
         String str = "";
         for (int i = 0; i < 3; i++) {
             str += (deck[i] + " ");
@@ -40,6 +45,7 @@ public class Deck {
     }
 
     private static void copyExc(int level, double[] precNum, String[] precStr, double[] newNum, String[] newStr, int i, int j, int op, boolean last) {
+        /* Meng-copy isi array prec ke new, dengan menghapus nilai yang dioperasikan dan menambahkan nilai hasil operasi */
         int ctr = 0;
         if (level > 2) {
             for (int k = 0; k < level; k++) {
@@ -55,6 +61,7 @@ public class Deck {
     }
 
     public static void solve(int level, HashSet<String> setStr, double[] precNum, String[] precStr) {
+        /* Meng-solve deck dan menyimpan jawabannya di set */
         boolean last;
         double[] newNum;
         String[] newStr;

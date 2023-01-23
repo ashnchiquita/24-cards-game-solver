@@ -8,6 +8,7 @@ public class OutputHandler {
     private static Scanner in = new Scanner(System.in);
 
     public static void outputTerm(HashSet<String> setStr) {
+        /* Menampilkan jawaban di terminal */
         System.out.println("\n" + setStr.size() + " solution(s) found");
         for (String ans : setStr) {
             System.out.println(ans);
@@ -15,10 +16,12 @@ public class OutputHandler {
     }
 
     public static int outputMethod() {
+        /* Memilih menulis jawaban ke file atau tidak */
         return InputHandler.rangedInput(1, 2, "\nWrite the answer to file?\n1. Yes\n2. No");
     }
 
     public static void writeAnsFile(String[] deck, HashSet<String> setStr, long exec) {
+        /* Menulis jawaban ke file .txt */
         String filename;
         FileWriter fw = null;
         BufferedWriter buff = null;
