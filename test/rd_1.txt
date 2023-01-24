@@ -1,0 +1,5 @@
+Deck: 9 9 9 5
+
+No solution found
+
+Execution time: 1 ms

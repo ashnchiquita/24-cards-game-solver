@@ -1,0 +1,6 @@
+Deck: 10 5 10 5
+
+1 solution(s) found
+(5 * 5) - (10 / 10)
+
+Execution time: 1 ms

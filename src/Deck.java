@@ -68,7 +68,7 @@ public class Deck {
         String[] newStr;
 
         if (level == 1) {
-            if (precNum[0] >= 23.99999999 && precNum[0] <= 24.00000001) {
+            if (precNum[0] >= 23.999999999 && precNum[0] <= 24.000000001) { // toleransi kesalahan floating point
                 setStr.add(precStr[0]);
             }
         } else {

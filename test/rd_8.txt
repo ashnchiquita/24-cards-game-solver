@@ -1,0 +1,9 @@
+Deck: 5 9 5 J
+
+4 solution(s) found
+(5 - 9) * (5 - J)
+(5 - J) * (5 - 9)
+(9 - 5) * (J - 5)
+(J - 5) * (9 - 5)
+
+Execution time: 0 ms
