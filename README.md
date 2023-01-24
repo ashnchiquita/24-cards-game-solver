@@ -49,16 +49,14 @@ A program created using Java programming language to solve 24-cards game. This p
 ```
 
 ## Prerequisite
-1. Java Development Kit (JDK), installation guide can be found [here](https://docs.oracle.com/en/java/javase/18/install/overview-jdk-installation.html)
+1. Java Development Kit (JDK), installation guide can be found [here](https://docs.oracle.com/en/java/javase/18/install/overview-jdk-installation.html).
 
 ## How To Use Program
-### Run from bin file
-1. Open terminal
-2. Change current directory of terminal to bin with `cd bin`
-3. Type `java App` in your terminal and hit Enter/return
-### Run from jar file
-1. Open terminal
-2. Type `java -jar 24-Cards-Game-Solver.jar` in your terminal and hit Enter/return
+1. Clone this repository
+2. Open terminal
+3. Type `java -jar 24-Cards-Game-Solver.jar` in your terminal and hit Enter/return
+### Warning!!!
+If you try to run from the bin file by using `java App` command, an error may occur when you try to write the answer to txt file (path can't be found), so it's better to run from jar file since it's platform-independent :)
 
 ## Author
 * Name      : Chiquita Ahsanunnisa
