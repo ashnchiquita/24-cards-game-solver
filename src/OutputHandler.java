@@ -9,9 +9,14 @@ public class OutputHandler {
 
     public static void outputTerm(HashSet<String> setStr) {
         /* Menampilkan jawaban di terminal */
-        System.out.println("\n" + setStr.size() + " solution(s) found");
-        for (String ans : setStr) {
-            System.out.println(ans);
+        if (setStr.size() == 0) {
+            System.out.println("\nNo solution found");
+        } else {
+            System.out.println("\n" + setStr.size() + " solution(s) found");
+            
+            for (String ans : setStr) {
+                System.out.println(ans);
+            }
         }
     }
 
@@ -22,12 +27,11 @@ public class OutputHandler {
 
     public static void writeAnsFile(String[] deck, HashSet<String> setStr, long exec) {
         /* Menulis jawaban ke file .txt */
-        String filename;
         FileWriter fw = null;
         BufferedWriter buff = null;
 
         System.out.print("\nFile name (without .txt): ");
-        filename = "./test/" + in.nextLine() + ".txt";
+        String filename = "./test/" + in.nextLine() + ".txt";
 
         try {
             fw = new FileWriter(filename);
@@ -35,13 +39,17 @@ public class OutputHandler {
             buff.write("Deck: " + Deck.stringDeck(deck));
             buff.newLine();
             buff.newLine();
-            buff.write(setStr.size() + " solution(s) found");
-            buff.newLine();
-
-
-            for (String ans : setStr) {
-                buff.write(ans);
+            if (setStr.size() == 0) {
+                buff.write("No solution found");
                 buff.newLine();
+            } else {
+                buff.write(setStr.size() + " solution(s) found");
+                buff.newLine();
+
+                for (String ans : setStr) {
+                    buff.write(ans);
+                    buff.newLine();
+                }
             }
 
             buff.newLine();
@@ -52,5 +60,9 @@ public class OutputHandler {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static void asciiArt() {
+
     }
 }
