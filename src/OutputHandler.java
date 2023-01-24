@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 
 public class OutputHandler {
+    /* Mengurus masalah output */
     private static Scanner in = new Scanner(System.in);
 
     public static void outputTerm(HashSet<String> setStr) {
@@ -63,6 +64,13 @@ public class OutputHandler {
     }
 
     public static void asciiArt() {
-
+        System.out.println("\n _____    __   __               ______   ________   ______    ______   ______");
+        System.out.println("/_____/\\ /__/\\/__/\\            /_____/\\ /_______/\\ /_____/\\  /_____/\\ /_____/\\");
+        System.out.println("\\:::_:\\ \\\\  \\ \\: \\ \\__  _______\\:::__\\/ \\::: _  \\ \\\\:::_ \\ \\ \\:::_ \\ \\\\::::_\\/_");
+        System.out.println("    _\\:\\| \\::\\_\\::\\/_/\\/______/\\\\:\\ \\  __\\::(_)  \\ \\\\:(_) ) )_\\:\\ \\ \\ \\\\:\\/___/\\");
+        System.out.println("   /::_/__ \\_:::   __\\/\\__::::\\/ \\:\\ \\/_/\\\\:: __  \\ \\\\: __ `\\ \\\\:\\ \\ \\ \\\\_::._\\:\\");
+        System.out.println("   \\:\\____/\\    \\::\\ \\            \\:\\_\\ \\ \\\\:.\\ \\  \\ \\\\ \\ `\\ \\ \\\\:\\/.:| | /____\\:\\");
+        System.out.println("    \\_____\\/     \\__\\/             \\_____\\/ \\__\\/\\__\\/ \\_\\/ \\_\\/ \\____/_/ \\_____\\/");
+        System.out.println("\n                      - .` * . g a m e   s o l v e r * . - . `");
     }
 }

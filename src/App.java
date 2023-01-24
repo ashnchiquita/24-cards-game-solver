@@ -4,7 +4,7 @@ public class App {
     /* PROGRAM UTAMA */
     public static void main(String[] args) throws Exception {
         int cmd;
-
+        OutputHandler.asciiArt();
         do {
             mainProg();
             cmd = InputHandler.contConfirm();

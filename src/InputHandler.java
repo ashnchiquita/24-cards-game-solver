@@ -3,6 +3,7 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class InputHandler {
+    /* Mengurus masalah input */
     private static final String[] validCards = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     private static Scanner in = new Scanner(System.in);
 
@@ -64,10 +65,12 @@ public class InputHandler {
     
     public static void readInput(String[] deck) {
         /* Membaca masukan deck custom */
+        System.out.print("Insert deck: ");
         String[] arrOfStr = in.nextLine().split(" ");
 
         while (!validArr(arrOfStr)) {
             System.out.println("Invalid input, please try again.");
+            System.out.print("Insert deck: ");
             arrOfStr = in.nextLine().split(" ");
         }
         

@@ -1,13 +1,14 @@
 import java.util.HashSet;
 
 public class Deck {
+    /* Mengurus proses pada deck */
     private static final char[] opList = {'+','-','*','/'};
-    private static double[] cpNum1 = {0.0, 0.0, 0.0};
-    private static double[] cpNum2 = {0.0, 0.0};
-    private static double[] cpNum3 = {0.0};
-    private static String[] cpStr1 = {"X", "X", "X"};
-    private static String[] cpStr2 = {"X", "X"};
-    private static String[] cpStr3 = {"X"};
+    private static double[] arrNum3 = new double[3];
+    private static double[] arrNum2 = new double[2];
+    private static double[] arrNum1 = new double[1];
+    private static String[] arrStr3 = new String[3];
+    private static String[] arrStr2 = new String[2];
+    private static String[] arrStr1 = new String[1];
 
     private static double opSwitch(double a, double b, int op) {
         /* Mengembalikan nilai 'a op b', op menunjukkan indeks pada array opList 
@@ -80,16 +81,16 @@ public class Deck {
                                 switch (level) {
                                     case 2:
                                         last = true;
-                                        newNum = cpNum3;
-                                        newStr = cpStr3;
+                                        newNum = arrNum1;
+                                        newStr = arrStr1;
                                         break;
                                     case 3:
-                                        newNum = cpNum2;
-                                        newStr = cpStr2;
+                                        newNum = arrNum2;
+                                        newStr = arrStr2;
                                         break;
                                     default: // case 4
-                                        newNum = cpNum1;
-                                        newStr = cpStr1;
+                                        newNum = arrNum3;
+                                        newStr = arrStr3;
                                         break;
                                 }
                                 copyExc(level, precNum, precStr, newNum, newStr, i, j, op, last);
